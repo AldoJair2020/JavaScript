@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio 7.9</title>
+    </head>
+    <body>
+        <a href="../../index.html">
+            <img src="../../imagenes/boton_regresar.png" width="150"
+            height="50" alt="bot&aacute;n de regresar">
+        </a>
+        <ul>
+            <h1>Ejercicio 7.9</h1>
+            <li>Identifique y corrija los errores en cada uno de los siguientes segmentos de código. [Notas puede haber más de un 
+                error en cada fragmento; a menos que haya declaraciones presentes, suponga que todas las variables están declaradas 
+                e inieblizadas correctamente].</li><br>
+            <ol type="A">
+               <li>if (edad >= 65); <br>
+                document.writeln( "Edad es mayor o igual que 65"); <br>
+                else <br>
+                document.writeln( "Edad es menor que 65"); <br>
+                 </li>
+                <p><strong>Error: </strong>existen 2 errores en este apartado, en la primera 
+                    condición del if no es necesario elpunto y coma, y el segundo error es que
+                    en el segundo document.writeln , las comillas están mal puestas, debería estar 
+                    dentro del mensaje.</p>
+
+                <li>var x = 1, total; <br>
+                while (x&lt;=10) <br>
+                { <br>
+                total += x;<br>
+                ++x; <br>
+                }</li>
+                <p><strong>Error: </strong>El error es que la variable total no está declarada por tanto no funcionaría el programa,
+                     deberíamos darle cualquier valor numérico entero.</p>
+                
+                <li>var x = 1; <br>
+                var total = 0; <br>
+                while (x&lt;=100) <br>
+                total = += x; <br>
+                ++x; </li>
+                <p><strong>Error: </strong>existen varios errores, el primero es que tanto la variable x , como la variable total 
+                    no están declaradas en ningún sitio y no funcionaría, para que funcione deberíamosdeclarar una variable de número
+                     entero, y a parte el bucle de repetición while deberíatener 2 llaves, ya que incluye más de una instrucción.</p>
+
+                <li>var y = 5; <br>
+                while (y > 0) <br>
+                {<br>
+                document.writeln(y); <br>
+                ++y;</li>
+                <p><strong>Error: </strong>Le falta llave que cierra abajo del ++y;</p>
+            </ol>
+        </ul>
+    </body>
+</html>

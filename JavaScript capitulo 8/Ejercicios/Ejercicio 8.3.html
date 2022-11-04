@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 8.3</title>
+    </head>
+
+    <body>
+        <a href="../../index.html">
+            <img src="../../imagenes/boton_regresar.png" width="150"
+            height="50" alt="bot&aacute;n de regresar">
+        </a>
+        <h1>Ejercicio de Autoevaluaci&oacute;n 8.3</h1>
+        <li>Encuentre el error en cada uno de los siguientes segmentos de c&oacute;digo, y explique c&oacute;mo corregirlo:</li>
+            <ol type="A">
+                <li>
+                    <p>
+                        x = 1; <br>
+                        while (x &lt;= 10); <br>
+                            ++x; <br>
+                    }
+                    </p>
+                    <strong>Error: </strong> El punto y coma despu&eacute;s del encabezado while provoca un ciclo infinito 
+                    y falta una llave izquierda.<br>
+                    <strong>Correcion: </strong>Reemplazar el punto y coma por una llave izquierda o eliminar el punto y coma
+                    junto con la llave derecha.<br><br>
+                </li>
+                <li>
+                    <p>
+                        switch ( n ) <br>
+                        { <br>
+                        case 1: <br>
+                        document.writeln( "El n&uacute;mero es 1" ); <br>
+                        case 2: <br>
+                        document.writeln( "El n&uacute;mero es 2" ); <br>
+                        break; <br>
+                        default: <br>
+                        document.writeln( "El n&uacute;mero no es 1 ni 2" ); <br>
+                        break; <br>
+                    }
+                    </p>
+                    <strong>Error: </strong>Falta una instrucci&oacute;n break en el primer case.<br>
+                    <strong>Correcion: </strong>  Agregar break al final del case 1.<br><br>
+                </li>
+                <li>
+                    <p>
+                        n = 1; <br>
+                        while (n &lt; 10) <br>
+                            document.writeln( n++);
+                    <p></p>
+                    <strong>Error: </strong>Se est&aacute; usando un operador relacional inadecuado despu&eacute;s del while.<br>
+                    <strong> Correcci&oacute;n: </strong> Usar &lt;= en vez de &lt;.<br><br>
+                </li>
+            </ol>
+    </body>
+</html>

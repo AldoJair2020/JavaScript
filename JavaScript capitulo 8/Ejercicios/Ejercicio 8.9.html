@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 8.9</title>
+    <script>
+        var numeros,contador=1;
+
+        while(contador<=5){
+            numeros=window.prompt(contador+".- Ingresa un numero");
+            numeros=parseInt(numeros);
+
+            document.write("<h2>");
+
+            for(let i=0; i<numeros; i++){
+                document.write("*");
+            }
+            document.write("</h2>");
+            ++contador;
+        }
+
+    </script>
+</head>
+<body>
+    <a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a>
+</body>
+</html>

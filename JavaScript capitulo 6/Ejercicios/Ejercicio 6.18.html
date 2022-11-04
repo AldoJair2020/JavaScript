@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio 6.18</title>
+        <script>
+            var primerNumero; 
+            var segudoNumero; 
+            var tercerNumero;
+            var numero1; 
+            var numero2;
+            var numero3; 
+            var suma; 
+            var multiplicacion;
+            var promedio;
+            var mayor;
+            var menor;
+
+            primerNumero = window.prompt("Escriba el primer numero");
+            segundoNumero = window.prompt("Escriba el segundo numero");
+            tercerNumero = window.prompt("Escriba el tercer numero");
+
+            numero1 = parseInt(primerNumero);
+            numero2 = parseInt(segundoNumero);
+            numero3 = parseInt(tercerNumero);
+
+            suma = numero1 + numero2 + numero3;
+            multiplicacion = numero1 * numero2 * numero3;
+            promedio = (numero1 + numero2 + numero3) / 3;
+
+            if (numero1 > numero2 && numero1 > numero3){
+                if (numero2 > numero3){
+                    mayor = numero1;
+                    menor = numero3;
+                }
+            }
+
+            if (numero2 > numero1 && numero2 > numero3){
+                if (numero1 > numero3){
+                    mayor = numero2;
+                    menor = numero3;
+                }
+            }
+
+            if (numero3 > numero1 && numero3 > numero2){
+                if (numero3 > numero1){
+                    mayor = numero3;
+                    menor = numero1;
+                }
+            }
+
+            window.alert("La suma es "+ suma +", el promedio es "+ promedio + 
+                ", el producto es "+ multiplicacion+", el numero mayor es "+mayor + ", el numero menor es "+ menor);
+            
+        </script>
+    </head><body><a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a></body>
+</html>

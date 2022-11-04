@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8.4</title>
+</head>
+<body>
+    <a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a>
+    <h1>Ejercicio 8.4</h1>
+            <li>Encuentre el error en cada uno de los siguientes segmentos de código. [Nota: puede haber más de un error].</li><br>
+    <ol type="A">
+        <li>For ( x = 100, x >= 1, ++x ) <br>
+             document.writeln( x );</li>
+             <p><strong>Error: </strong>no se inicializó con "{" despues del "()" y For es con minuscula "for".</p>
+
+        <li>El siguiente código debe imprimirse sin importar si el valor entero es par o impar: <br>
+             switch ( valor % 2 ) <br> { <br>
+                 case 0: <br> document.writeln( "Entero par" ); <br>
+                  case 1: <br> document.writeln( "Entero impar" ); <br> } <br></li>
+        <p><strong>Error: </strong>el codigo para imprimir algo no es el optimo y a los case les falta el "break" y el opcional "default".</p><br>
+
+        <li>El siguiente código debe imprimir los enteros impares del 19 al 1: <br> for ( x = 19; x >= 1; x += 2 ) <br> document.writeln( x ); <br></li>
+        <p><strong>Error: </strong>la variable x va en incremento, deberia ir en decremento. y está imprimiendo todos los numeros sin excepcion, cuando deberian ser solo los impares.</p><br>
+
+        <li>El siguiente código debe imprimir los enteros pares del 2 al 100: <br> contador = 2;<br> do { <br> document.writeln( contador );  <br> contador += 2; <br> } } While ( contador < 100 ); <br></li>
+        <p><strong>Error: </strong>el contador no llega a la meta (100) deberia ser while(contador<=100);</p>
+    </ol>
+</body>
+</html>

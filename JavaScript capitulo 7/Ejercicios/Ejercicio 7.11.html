@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio 7.11</title>
+        <script>
+            var kilometros = 0;
+            var kilometros_usuario;
+            var litros;
+            var litros_usuario;
+            var kilometrosTotales = 0;
+            var litrosTotales = 0;
+            var promedio;
+            var promedioTotal;
+            var nregistros_usuario;
+            var contador = 0;
+            var nregistro;
+
+            nregistros_usuario = window.prompt("¿Cuantos registro va a registrar? ")
+            nregistro = parseInt(nregistros_usuario);
+
+            while (nregistro > contador){
+
+            kilometros_usuario = window.prompt("Introduzca el numero de kilimetros en su viaje");
+            kilometros = parseInt(kilometros_usuario);
+
+            kilometrosTotales += kilometros;
+
+            litros_usuario = window.prompt("Introduzca el numero de litros en su viaje");
+            litros = parseInt(litros_usuario);
+
+            litrosTotales += litros;
+
+            promedio = kilometros / litros;
+            document.writeln("<p>El kilometro por litro es: " + promedio + "</p>");
+
+            contador++;
+
+            }
+            
+            promedioTotal = kilometrosTotales / litrosTotales;
+            document.writeln("<p>El total de los kilometros por litro es: "  + promedioTotal + "</p>");
+
+        </script>
+    </head><body><a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a></body>
+</html>

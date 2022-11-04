@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio 7.13</title>
+        <script>
+            var articulo1, articulo1Usuario;
+            var articulo2, articulo2Usuario;
+            var articulo3, articulo3Usuario;
+            var articulo4, articulo4Usuario;
+            var comisionSemanal = 200;
+            var comisionVar = 0.09;
+            var totalArticulos;
+            var totalIngresos;
+
+            articulo1Usuario = window.prompt("Ingrese el valor del articulo 1");
+            articulo1 = parseInt(articulo1Usuario);
+
+            articulo2Usuario = window.prompt("Ingrese el valor del articulo 2");
+            articulo2 = parseInt(articulo2Usuario);
+
+            articulo3Usuario = window.prompt("Ingrese el valor del articulo 3");
+            articulo3 = parseInt(articulo3Usuario);
+
+            articulo4Usuario = window.prompt("Ingrese el valor del articulo 4");
+            articulo4 = parseInt(articulo4Usuario);
+
+            totalArticulos = articulo1 + articulo2 + articulo3 + articulo4;
+
+            totalIngresos = comisionSemanal + (totalArticulos * comisionVar);
+
+            document.writeln("<p>Tu ingreso semanal es: " + totalIngresos + "</p>");
+
+        </script>
+    </head><body><a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a></body>
+</html>

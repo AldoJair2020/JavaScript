@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<!-- Fig. 8.12 PruebaContinue.html -->
+<!-- Uso de la instrucción continue en una instrucción for. -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Uso de la instrucción continue en una instrucci&oacute;n for
+        </title>
+        
+        <script>
+
+            for (var cuenta = 1; cuenta <=10; ++cuenta)
+            {
+                if ( cuenta == 5)
+                continue; //Omite el resto del código del ciclo sólo si cuenta == 5         
+            
+                document.writeln( cuenta + " ");
+            } //Fin de for
+
+            document.writeln("<p>Se us&oacute; continue para no imprimir el 5</p>");
+        </script>
+
+    </head><body><a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a></body>
+</html>

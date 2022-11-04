@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio 6.20</title>
+        <script>
+            var primerNumero; 
+            var segudoNumero; 
+            var tercerNumero;
+            var cuartoNumero;
+            var quintoNumero;
+            var numero1; 
+            var numero2;
+            var numero3; 
+            var numero4;
+            var numero5;
+            var mayor;
+            var menor;
+
+            primerNumero = window.prompt("Escriba el primer numero");
+            segundoNumero = window.prompt("Escriba el segundo numero");
+            tercerNumero = window.prompt("Escriba el tercer numero");
+            cuartoNumero = window.prompt("Escriba el cuarto numero");
+            quintoNumero = window.prompt("Escriba el quinto numero");
+
+            numero1 = parseInt(primerNumero);
+            numero2 = parseInt(segundoNumero);
+            numero3 = parseInt(tercerNumero);
+            numero4 = parseInt(cuartoNumero);
+            numero5 = parseInt(quintoNumero);
+
+            menor = numero1;
+            if (numero2 < menor){
+                menor = numero2;
+            }
+            if (numero3 < menor){
+                menor = numero3;
+            }
+            if (numero4 < menor){
+                menor = numero4
+            }
+            if (numero5 < menor){
+                menor = numero5
+            }
+
+            mayor = numero1;
+            if (numero2 > menor){
+                mayor = numero2;
+            }
+            if (numero3 > menor){
+                mayor = numero3;
+            }
+            if (numero4 > menor){
+                mayor = numero4
+            }
+            if (numero5 > menor){
+                mayor = numero5
+            }
+
+            document.writeln("<h1>El numero mayor es "+ mayor +" y el numero menor es "+ menor + "</h1>");
+
+        </script>
+    </head><body><a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a></body>
+</html>

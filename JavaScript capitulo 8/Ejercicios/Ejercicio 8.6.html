@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 8.6</title>
+    <script>
+        var cantidad,numeros=[],menor=0;
+
+        cantidad=window.prompt("Teclee los numeros que desea ingresar");
+        cantidad=parseInt(cantidad);
+
+        for(let i=0; i<cantidad; i++){
+
+            numeros[i]=window.prompt(i+1+".- Ingresa un numero positivo.");
+            numeros[i]=parseInt(numeros[i]);
+            
+            while(numeros[i]<0 || isNaN(numeros[i])){45
+                window.alert("Solo puedes ingresar numeros positivos");
+                numeros[i]=window.prompt(i+1+".- Ingresa un numero positivo.");
+                numeros[i]=parseInt(numeros[i]);
+            }
+            
+            if(menor>numeros[i] || i==0){
+                menor=numeros[i];
+            }
+        }
+        document.write("<p>El menor de la secuencia: "+numeros+" es: "+menor+"</p>");
+    </script>
+</head>
+<body>
+    <a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a>
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 8.2</title>
+    </head>
+
+    <body>
+        <a href="../../index.html">
+            <img src="../../imagenes/boton_regresar.png" width="150"
+            height="50" alt="bot&aacute;n de regresar">
+        </a>
+        <h1>Ejercicio de Autoevaluaci&oacute;n 8.2</h1>
+        <li>Escriba instrucciones de JavaScript para realizar cada una de las siguientes tareas:</li>
+            <ol type="A">
+                <li>
+                    <p>
+                        Sumar los enteros impares entre 1 y 99. Utilice una instrucci&oacute;n for.
+                        Suponga que se han declarado las variables suma y cuenta.
+                    </p>
+                    Instrucci&oacute;n: <br>
+                    suma = 0; <br>
+                    for ( cuenta = 1; cuenta &lt;= 99; cuenta += 2) <br>
+                    suma += cuenta;<br><br>
+                </li>
+                <li>
+                    <p>
+                        Calcular el valor de 2.5 elevado a la potencia de 3. Use el método pow.
+                    </p>
+                    Instrucci&oacute;n: Math.pow( 2.5, 3); <br><br>
+                </li>
+                <li>
+                    <p>
+                        Imprimir los enteros del 1 al 20 mediante el uso de un ciclo while y la variable contador x.
+                        Suponga que la variable x se ha declarado, pero no se ha inicializado. 
+                        Imprima solamente cinco enteros por l&iacute;nea. [Sugerencia: use el c&aacute;lculo x % 5. 
+                        Cuando el valor de esta expresi&oacute;n sea 0. inicie un nuevo p&aacute;rrafo en el documento de HTML5].
+                    </p>
+                    Instrucci&oacute;n:  <br>
+                    x = 1; <br>
+                    document.writeln( "&lt;p&gt;"); <br>
+                    while ( x &lt;= 20) { <br>
+                    document.write( x + " "); <br>
+                    if (x % 5 == 0) <br>
+                    document.write("&lt;/p&gt; &lt;p&gt;"); <br>
+                    ++x; <br>
+                    }
+                    <br><br>
+                </li>
+                <li>
+                    <p>
+                        Repita el ejercicio 8.2, (c), pero ahora use una instrucci&oacute;n for.
+                    </p>
+                    Instrucci&oacute;n:  <br>
+                    document.writeln( "&lt;p&gt;" ); <br>
+                    for ( x = 1; x &lt;= 20; ++x) { <br>
+                    document.write( x + " "); <br>
+                    if ( x % 5 == 0 ) <br>
+                    document.write("&lt;/p&gt; &lt;p&gt;" ); <br>
+                    }
+                    <br><br>
+                </li>
+            </ol>
+    </body>
+</html>

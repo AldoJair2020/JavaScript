@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio 7.12</title>
+        <script>
+            var cuenta, cuentaUsuario;
+            var saldoInicial, saldoInicialUsuario;
+            var totalDeCargos, totalDeCargosUsuario;
+            var totalDeCreditos, totalDeCreditoUsuario;
+            var limiteDeCredito, limiteDeCreditoUsuario;
+            var limite = 0;
+
+            cuentaUsuario = window.prompt("Introduzca el numero de cuenta");
+            cuenta = parseInt(cuentaUsuario);
+
+            saldoInicialUsuario = window.prompt("Introduzca el saldo inicial");
+            saldoInicial = parseInt(saldoInicialUsuario);
+
+            totalDeCargosUsuario = window.prompt("Introduzca el total de cargos");
+            totalDeCargos = parseInt(totalDeCargosUsuario);
+
+            totalDeCreditoUsuario = window.prompt("Introduzca el total de creditos");
+            totalDeCreditos = parseInt(totalDeCreditoUsuario);
+
+            limiteDeCreditoUsuario = window.prompt("Introduzca el limite de credito");
+            limiteDeCredito = parseInt(limiteDeCreditoUsuario);
+
+            limite = saldoInicial + totalDeCargos - totalDeCreditos;
+
+                document.writeln("<p>Cuenta: " + cuenta + "</p>");
+                document.writeln("<p>Limite de credito: " + limiteDeCredito + "</p>");
+                document.writeln("<p>Saldo: " + limite + "</p>");
+            
+            if (limite > limiteDeCredito){
+                document.writeln("<p>Limite de credito extendido </p>")
+            }
+
+        </script>
+    </head><body><a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a></body>
+</html>

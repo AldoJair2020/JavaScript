@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ejercicio 7.20</title>
+        <script>
+            var entero =0, enteroUsuario;
+            var digito1 = 0 , digito2 = 0, digito3 = 0, digito4 = 0, digito5 = 0;
+
+                enteroUsuario = window.prompt("Ingrese un Numero de 5 Digitos: ");
+                entero = parseInt(enteroUsuario);
+
+                while ((entero < 9999) || (entero > 100000)){
+                    window.alert(entero + " no tiene 5 digitos");
+                    enteroUsuario = window.prompt("Ingrese un Numero de 5 Digitos: ");
+                    entero = parseInt(enteroUsuario);
+                }
+                
+                digito1 = entero / 10000;
+                digito2 = (entero % 10000) / 1000;
+                digito3 = (entero % 1000) / 100;
+                digito4 = (entero % 100) / 10;
+                digito5 = (entero % 10) / 1;
+                
+                //window.alert(digito1 + " - " + digito2 + " - " + digito3 + " - " + digito4 + " - " + digito5);
+
+                if (digito1 == digito5 && digito2 == digito4)
+                    window.alert(entero + " es palindromo :)");
+                else
+                    window.alert(entero + " no es palindromo :)");
+                
+        </script>
+    </head><body><a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a></body>
+</html>

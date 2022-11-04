@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<!-- Fig. 9.12 PruebaFactorial.html -->
+<!-- Cálculo del factorial con una función recursiva -->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Funci&oacute;n factorial recursiva</title>
+        <style type="text/css">
+            p {margin: 0px;}
+        </style>
+        <script>
+            var salida = ""; //Almacena la salida
+
+            //Calcula los factoriales de 0 a 10
+            function calcularFactoriales()
+            {
+                for (var i = 0; i <= 10; ++i)
+                    salida += "<p>" + i + "! = " + factorial( i ) + "</p>";
+                
+                document.getElementById( "resultados" ).innerHTML = salida;
+            } //Fin de la función calcularFactoriales
+
+            //Definición recursiva de la función factorial
+            function factorial (numero)
+            {
+                if (numero <= 1 ) //Caso base
+                    return 1;
+                else
+                    return numero * factorial(numero - 1);
+            } //Fin de la función factorial
+
+            window.addEventListener("load", calcularFactoriales, false);
+        </script>
+    </head>
+    <body>
+        <a href="../../index.html">
+            <img src="../../imagenes/boton_regresar.png" width="150"
+            height="50" alt="bot&aacute;n de regresar">
+        </a>
+        <h1>Factoriales de 0 a 10</h1>
+        <div id="resultados"></div>
+    </body>
+</html>
