@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9.21</title>
+    <style>
+        div{
+            height:100px;
+        }
+    </style>
+    <script>
+        var contador=1;
+        var activo=false;
+        var contadorCara=0;
+        var contadorCruz=0;
+        var Resultado;
+        
+        function escucha(){
+            var boton=document.getElementById("boton");
+            boton.addEventListener("click",ActivarMoneda,false);
+            var boton2=document.getElementById("boton2");
+            boton2.addEventListener("click",Detener,false);
+            var boton3=document.getElementById("boton3");
+            boton3.addEventListener("click",Limpiar,false);
+        }
+
+        function Limpiar(){
+            contadorCara=0;
+            contadorCruz=0;
+            contador=0;
+            document.getElementById("Vueltas").innerHTML="Vueltas <br>Cara: 0<br>Cruz: 0";
+            document.getElementById("finalRes").innerHTML="SIN RESULTADO";
+        }
+
+        function ActivarMoneda(){
+            activo=true;
+            var Tiempo_cambio=setTimeout(cambio_Imagen,120);
+        }
+
+        function cambio_Imagen(){
+            if(activo){
+                contador++;
+                if(contador==9){
+                    contadorCruz++;
+                }
+                if(contador==17){
+                    contadorCara++;
+                    contador=1;
+                }
+                document.getElementById("gif").src="imagenes/moneda"+contador+".png";
+                if(contador<5 || contador>=15 && contador<=17){
+                    Resultado=true;
+                }
+                if(contador>=5 && contador<12){
+                    Resultado=false;}
+                ActivarMoneda();
+            }
+        }
+
+        function Detener(){
+            activo=false;
+            document.getElementById("Vueltas").innerHTML="Vueltas. <br>Cara: "+contadorCara+"<br>Cruz: "+contadorCruz;
+            if(Resultado){
+                document.getElementById("finalRes").innerText="Resultado: 'Cara'";
+            }else{
+                document.getElementById("finalRes").innerText="Resultado: 'Cruz'";
+            }
+        }
+
+    window.addEventListener("load",escucha,false);
+    </script>
+</head>
+<body>
+    <a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a>
+    <div>
+        <p>
+            <img id="gif" src="imagenes/moneda1.png" alt="Imagen de moneda">
+        </p>
+    </div>
+        <p>
+            <input id="boton" type="button" value="Lanzar la Moneda">
+            <input id="boton2" type="button" value="Detener moneda">
+            <input id="boton3" type="button" value="Reiniciar conteo">
+        </p>
+        <p id="Vueltas"></p>
+        <p id="finalRes"></p>
+</body>
+</html>

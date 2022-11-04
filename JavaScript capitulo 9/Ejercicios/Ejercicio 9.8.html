@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9.8</title>
+    <script>
+
+        var contador=0;
+        var clientesArray=[];
+        var cobroArray=[];
+
+        function CalcularRecibo(){
+            var BotonreciboAyer=document.getElementById("BotonCalcularAyer");
+            BotonreciboAyer.addEventListener("click",mostrarReciboAyer,false);
+            var Botonrecibo=document.getElementById("BotonCalcular");
+            Botonrecibo.addEventListener("click",mostrarRecibo,false);
+        }
+
+        function mostrarRecibo(){
+            var Entrada1=document.getElementById("cliente");
+            Entrada1=parseInt(Entrada1.value);
+            var Entrada2=document.getElementById("horas");
+            Entrada2=parseFloat(Entrada2.value);
+
+            console.log("E1: "+Entrada1+" ||  E2:"+Entrada2);
+            if(isNaN(Entrada1) || isNaN(Entrada2)){
+                window.alert("Llena todos campos");
+            }else{
+                if(Entrada2>24){
+                    window.alert("El maximo de horas por persona son 24.");
+                    document.getElementById("cliente").value="";
+                    document.getElementById("horas").value="";
+                }else{
+                    var TablaEstructura=document.getElementById("Divtabla");
+                    TablaEstructura.innerHTML="<table border=1> <caption>Recibo</caption> <thead><tr><th>Cliente</th><th>Cobro</th></tr></thead> <tbody><tr><td>"+Entrada1+"</td><td>$"+recibo1(Entrada2)+"</td></tr></tbody></table>";
+
+                    clientesArray[contador]=Entrada1;
+                    cobroArray[contador]=Entrada2;
+                    ++contador;
+                }
+            }
+        }
+
+        function mostrarReciboAyer(){
+            var tablaEstructura=document.getElementById("Divtabla");
+            tablaEstructura.innerHTML="";
+
+            if(contador==0){
+                window.alert("Aun no hay registros");
+            }else{
+
+                document.writeln("<table border=1><caption>Recibo de ayer</caption><thead><tr><th>Cliente</th><th>Cobro</th></tr></thead><tbody>");
+                for(let i=0; i<contador; i++){
+                    document.write("<tr><td>"+clientesArray[i]+"</td><td>"+cobroArray[i]+"</td></tr>");
+                }
+                document.write("</tbody></table> <a href='Ejercicio 9.8.html'>Regresar</a>");
+            }            
+        }
+
+        function recibo1(horasAr){
+            var HorasTotal,resultado;
+            if (horasAr>3 && horasAr<24){
+                HorasTotal=horasAr-3;
+                resultado=2+(HorasTotal*0.50);
+            }else if(horasAr==24){
+                resultado=10;
+            }else{
+                resultado=2;
+            }
+
+            return resultado.toFixed(2);
+        }
+
+        window.addEventListener("load",CalcularRecibo,false);
+
+
+    </script>
+    
+</head>
+<body>
+    <a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a>
+    <form action="#">
+        <p>
+            <label>N cliente:  </label>
+            <input id="cliente" type="number" min="1">
+        </p>
+        <p>
+            <label>Horas ocupadas:  </label>
+            <input id="horas" type="number" min="0" max="24">
+        </p>
+        <p>
+            <input id="BotonCalcular"type="button" value="Ver Recibo">
+            &nbsp;
+            <input id="BotonCalcularAyer"type="button" value="Ver Recibos pasados">
+        </p>
+    </form>
+    <div id="Divtabla">
+         
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9.7</title>
+
+    <script>
+        function CalcArea(){
+            var boton=document.getElementById("BotonCalcular");
+            boton.addEventListener("click",mostrarResultado,false);
+        }
+
+        function mostrarResultado(){
+            var Entrada=document.getElementById("Radio");
+            var radio=parseFloat(Entrada.value);
+
+            if(isNaN(radio)){
+                window.alert("Ingresa un valor.");
+            }else{
+                var resultado=document.getElementById("resultado");
+                resultado.innerHTML="El volumen del circulo es: "+volumenCirc(radio)+" unidades.";
+            }
+        }
+
+        function volumenCirc(radioAr){
+            var area;
+            area=Math.PI*Math.pow(radioAr,2);
+            return area.toFixed(2);
+        }
+
+        window.addEventListener("load",CalcArea,false);
+        
+    </script>
+
+</head>
+<body>
+    <a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a>
+    <form action="#">
+        <p>
+            <label>Radio:
+                <input id="Radio" type="number">
+            </label>
+            <input  id="BotonCalcular" type="button" value="Calcular Volumen">
+        </p>
+    </form>
+    <p id="resultado"></p>
+
+</body>
+</html>

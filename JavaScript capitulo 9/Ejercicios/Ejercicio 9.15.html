@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9.15</title>
+    <script>
+        var numero;
+        numero=window.prompt("Porfavor teclea un numero \nIngresa una letra para salir");
+        numero=parseInt(numero);
+
+        if(numero%2==0){
+            window.alert(numero + " es Par");
+        }else if(isNaN(numero)==false){
+            window.alert(numero + " es Impar");
+        }
+
+        while(isNaN(numero)==false){
+            numero=window.prompt("Ingresa un numero \nIngresa una letra para salir");
+             numero=parseInt(numero);
+
+             if(numero%2==0){
+                 window.alert(numero + " es Par");
+             }else if(isNaN(numero)==false){
+                 window.alert(numero + " es Impar");
+             }
+        }
+
+        window.alert("Adios :)");
+        
+    </script>
+</head>
+<body>
+    <a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9.22</title>
+    <script>
+        var numgen1;
+        var numgen2;
+        var contAcierto=0;
+        var contError=0;
+        var error=false;
+
+       function generar(){
+           numgen1=Math.floor(1+Math.random()*10);
+           numgen2=Math.floor(1+Math.random()*10);
+        } 
+           
+
+        function escucha(){
+            var boton1=document.getElementById("botonC");
+            boton1.addEventListener("click",verifica,false);
+        }
+
+        function verifica(){
+            var entradaenable=document.getElementById("Entrada");
+            entradaenable.enabled=true;
+            var porcentaje;
+            var cambios=["Excelente","Sigua así","Buen trabajo","Muy bien"];
+            var cambios2=["No. Intentalo de nuevo","Equivocado, trate una vez más.","No se dé por vencido","No, sigue intentando :)"];
+            var animo=Math.floor(Math.random()*cambios.length);
+            var intento=Math.floor(Math.random()*cambios2.length);
+            var respuesta=numgen1*numgen2;
+            var Entrada=document.getElementById("Entrada");
+            Entrada=parseInt(Entrada.value);
+            if(Entrada!=respuesta){
+                document.getElementById("Pregunta").innerHTML =cambios2[intento]+"<br>¿Cuánto es "+numgen1+" por "+numgen2+"?";
+                document.getElementById("ver").innerHTML ="";
+                limpiar();
+                error=true;
+                return false;
+            }
+            document.getElementById("ver").innerHTML =cambios[animo];
+            Pregunta();
+
+            if(error){
+                contError++;
+                error=false;
+            }else{
+                contAcierto++;
+            }
+            if((contAcierto+contError)>=10){
+                var entradadisabled=document.getElementById("Entrada");
+                var Pantalla=document.getElementById("")
+                var mensaje=document.getElementById("ayuda");
+                var BotonVal=document.getElementById("botonC");
+                if(contError>contAcierto){
+                    mensaje.innerHTML="Pida ayuda adicional a su profesor :). <br>"+"Aciertos: "+contAcierto+"<br>Errores: "+contError;
+                }else{
+                    mensaje.innerHTML="Excelente. <br>"+"Aciertos: "+contAcierto+"<br>Errores: "+contError;
+                }
+                BotonVal.value="Reinciar";
+                entradadisabled.disabled=true;
+                contAcierto=0;
+                contError=0;
+                BotonVal.addEventListener("click",reiniciar,false);
+            }
+        }
+
+        function reiniciar(){
+            location.reload()
+        }
+
+        function Pregunta(){
+            generar();
+            document.getElementById("Pregunta").innerHTML ="&nbsp;&nbsp;¿Cuánto es "+numgen1+" por "+numgen2+"?";
+            limpiar();
+        }
+
+        function limpiar(){
+            var objet=document.getElementById("Entrada");
+            objet.value="";
+            objet.focus();
+        }
+
+        window.addEventListener("load",escucha,false);
+
+    </script>
+</head>
+<body onload="Pregunta()">
+    <a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a>
+        <form action="#">
+            <div>
+                <p id="ver"></p> 
+                <p id="Pregunta"></p>
+            </div>
+                
+            <input id="Entrada" type="number" placeholder="Respuesta" >
+            <p>
+            <input id="botonC" type="button" value="Verificar respuesta">
+            </p>
+            <p id="ayuda">
+
+            </p>
+        </form>
+</body>
+</html>

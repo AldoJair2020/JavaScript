@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9.25</title>
+    <script>
+        var numeroF;
+        numeroF=Math.floor(1+Math.random()*1000);
+
+        function iniciar(){
+            document.getElementById("ayuda").innerText="";
+            var Entrada=document.getElementById("Entrada");
+            Entrada=parseInt(Entrada.value);
+            console.log(Entrada);
+            if(Entrada==numeroF){ 
+                document.getElementById("ayuda").style='color:green';
+                document.getElementById("ayuda").innerHTML="¡Acertaste!";
+                document.getElementById("Pnumero").style.color="green";
+                document.getElementById("Pnumero").style.fontSize="35px";
+                document.getElementById("Pnumero").innerHTML=numeroF;
+                document.getElementById("Entrada").disabled=true;
+                document.getElementById("boton").innerText="Reiniciar";
+                document.getElementById("boton").addEventListener("click",reiniciar,false);
+            }else if(numeroF>Entrada){
+                document.getElementById("ayuda").style='color:red';
+                document.getElementById("ayuda").innerHTML="Demasiado Bajo. <span>Intente de nuevo";
+                document.getElementById("Entrada").value="";
+                document.getElementById("Entrada").focus();
+            }else{
+                document.getElementById("ayuda").style='color:blue';
+                document.getElementById("ayuda").innerHTML="Demasiado Alto. <span>Intente de nuevo";
+                document.getElementById("Entrada").value="";
+                document.getElementById("Entrada").focus();
+            }
+        }
+        //console.log(numeroF);
+        function reiniciar(){
+            location.reload();
+        }
+
+    </script>
+</head>
+<body>
+        <a href="../../index.html">
+            <img src="../../imagenes/boton_regresar.png" width="150"
+            height="50" alt="bot&aacute;n de regresar">
+        </a>
+        <p id="Pregunta">Adivina el numero que se esconde en los #:</p>
+        <p id="Pnumero">##########</p>
+        <p id="ayuda"></p>
+        <br>
+        <p>
+            <label>Respuesta: </label>
+            <input  id="Entrada" type="number" autofocus>
+            <button id="boton" onclick="iniciar()" >Intentar</button>
+        </p>
+</body>
+</html>

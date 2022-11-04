@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9.9</title>
+    <script>
+        function EscuchaBoton(){
+            var Boton=document.getElementById("BotonCalcular");
+            Boton.addEventListener("click",MostrarResultado,false);
+            var Boton2=document.getElementById("limpiar");
+            Boton2.addEventListener("click",LimpiarT,false)
+        }
+
+        function LimpiarT(){
+            var L1=document.getElementById("coor_x1").value="";
+            var L2=document.getElementById("coor_x2").value="";
+            var L3=document.getElementById("coor_y1").value="";
+            var L4=document.getElementById("coor_y2").value="";
+            var LText=document.getElementById("result");
+            LText.innerHTML="<p></p>";
+        }
+
+        function MostrarResultado(){
+            var muestra=document.getElementById("result");
+            var x1=document.getElementById("coor_x1");
+            x1=parseFloat(x1.value);
+            var x2=document.getElementById("coor_x2");
+            x2=parseFloat(x2.value);
+            var y1=document.getElementById("coor_y1");
+            y1=parseFloat(y1.value);
+            var y2=document.getElementById("coor_y2");
+            y2=parseFloat(y2.value);
+            var resultado;
+
+            resultado=Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
+            
+            muestra.innerText="RESULTADO: "+resultado.toFixed(3)+" Unidades.";
+
+        }
+
+        window.addEventListener("load",EscuchaBoton,false);
+
+    </script>
+</head>
+<body>
+    <a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a>
+    <form action="#">
+        <p>
+            <label>Coordenada A: &nbsp; </label>
+            <input id="coor_x1" type="number" placeholder="x1"> &nbsp;
+            <input id="coor_y1" type="number" placeholder="y1">
+        </p>
+        <p>
+            <label>Coordenada b: &nbsp; </label>
+            <input id="coor_x2" type="number" placeholder="x2"> &nbsp;
+            <input id="coor_y2" type="number" placeholder="y2">
+        </p>
+        <p>
+            <input id="BotonCalcular" type="button" value="Calcular">
+            <input id="limpiar" type="button" value="Limpiar">
+        </p>
+        <p id="result"></p>
+    </form>
+</body>
+</html>

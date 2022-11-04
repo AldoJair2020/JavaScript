@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9.19</title>
+    <script>
+        function escucha(){
+            var boton1=document.getElementById("boton1");
+            boton1.addEventListener("click",NumPrimo,false);
+            var boton2=document.getElementById("boton2");
+            boton2.addEventListener("click",Calcular,false);
+        }
+
+        function NumPrimo(){
+            var num1=window.prompt("Ingresa un numero");
+            num1=parseInt(num1);
+            var Primo=true;
+            if(num1>1){
+                for(let i=2; i<num1; i++){
+                    if(num1%num1==0 && num1%i==0){
+                        Primo=false;
+                        break;
+                    }
+                }
+            }else{
+                Primo=false;
+            }
+            console.log(Primo+""+num1);
+            if(Primo){
+                window.alert(num1 + " es Primo");
+            }else{
+                window.alert(num1 + " no es Primo");
+            }
+        }
+
+        function Calcular(){
+            var num=3; var 
+            texto=document.getElementById("AreaT");
+            Primo=true;
+            
+            while(num<=10000){
+
+                for(let i=2; i<num; ++i){
+                    if(num%i==0){
+                        Primo=false;
+                        break;
+                    }
+                }
+
+                if(Primo){
+                    texto.value+=num+", ";
+                    console.log(num);
+                }
+                Primo=true;
+                num++;
+                
+            }
+        }
+
+        window.addEventListener("load",escucha,false);
+    </script>
+</head>
+<body>
+    <a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a>
+    <form action="#">
+        <p>
+            <textarea name="result" id="AreaT" cols="30" rows="10" disabled="true"></textarea>
+        </p>
+        <p><input id="boton1" type="button" value="Calcular numeros primos">
+            <input id="boton2" type="button" value="¿Cuales son numeros Primos?">
+        </p>
+    </form>
+</body>
+</html>

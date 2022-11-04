@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9.14</title>
+    <script>
+
+        function escucha(){
+            var boton=document.getElementById("botonC");
+            boton.addEventListener("click",Potencia_Entera,false);
+        }
+
+        function Potencia_Entera(){
+            var rText=document.getElementById("textRes");
+            var num=document.getElementById("Base");
+            num=parseFloat(num.value);
+            var expo=document.getElementById("Exp");
+            expo=parseFloat(expo.value);
+
+            var resultado;
+
+            if(num%expo == 0){
+                resultado=true;
+                rText.innerHTML="True";
+            }else{
+                resultado=false;
+                rText.innerHTML="False";
+            }
+            
+        }
+
+        window.addEventListener("load",escucha,false);
+    </script>
+</head>
+<body>
+    <a href="../../index.html">
+        <img src="../../imagenes/boton_regresar.png" width="150"
+        height="50" alt="bot&aacute;n de regresar">
+    </a>
+    <form action="#">
+        <p>
+            <label>Ingrese numero1: </label>
+            <input id="Base" type="number" placeholder="numero1">
+        </p>
+        <p>
+            <label>Ingreso numero2: </label>
+            <input id="Exp" type="number" placeholder="numero2">
+        </p>
+        <input id="botonC" type="button" value="Calcular">
+    </form>
+    <p id="textRes">
+
+    </p>
+</body>
+</html>
